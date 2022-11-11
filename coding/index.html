@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		.moonColor {
+			color: lightgray;  
+		}
+		.sunColor {
+			color: orange;
+		}
+	</style>
+	<body>
+		<p id="demo"></p>
+		<button onclick="document.innerHTML=check(change())">Change theme</button>
+		<script>
+			function check() 
+			{
+				var x
+				if(document.body.style.backgroundColor === '' || document.body.style.backgroundColor === 'white') 
+				{
+					x = '☀️';
+					document.getElementById("demo").innerHTML = "<span class='sunColor'>" + x.big().bold()
+				}
+				else 
+				{
+					x = "🌙";
+					document.getElementById("demo").innerHTML = "<span class='moonColor'>" + x.big().bold();
+				}
+				return "<span class='sunColor'>" + x.big().bold();
+			}
+			document.getElementById("demo").innerHTML = check();
+			function change() 
+			{ 
+				if(document.body.style.backgroundColor === '' || document.body.style.backgroundColor === 'white') 
+				{
+					document.body.style.backgroundColor = "#484848";
+				} 
+				else 
+				{
+					document.body.style.backgroundColor = "white";
+				}
+			}
+		</script>
+	</body>
+</html>
