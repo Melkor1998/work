@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <button type="button" onclick="myFunction()">Change Theme</button>
+
+<script>
+  document.getElementsByTagName("html")[0].setAttribute("oncontextmenu", "return false"); 
+function myFunction() {
+  if(document.body.style.backgroundColor === '' || document.body.style.backgroundColor === 'white')
+    document.body.style.backgroundColor = "#484848";
+  else
+    document.body.style.backgroundColor = "white"
+}
+
+</script>
+  
+<head>
+  <title>Shota's Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: green;
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: green;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: green;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+  
+span {
+    background-color: black;
+}
+
+</style>
+</head><h1><p style="text-align: center;" >Welcome to Shota's gallery
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <a href="https://shotasblog.netlify.app/pictures/101390151_144155547244125_3687818078948687872_n_144155537244126.jpg">
+  <img src="pictures/1.jpg" style="width:100%">
+  </a>
+  <div class="text"><p style="color: green"><span>წყნეთის ტყე</span></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5</div>
+  <a href="https://shotasblog.netlify.app/pictures/100879940_144155327244147_1562895520492421120_n_144155323910814.jpg">
+  <img src="pictures/2.jpg" style="width:100%">
+  </a>
+  <div class="text"><p style="color: green"><span>ქვათახევი</span></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <a href="https://shotasblog.netlify.app/pictures/101210724_144155147244165_2758972912324050944_n_144155143910832.jpg">
+  <img src="pictures/3.jpg" style="width:100%">
+  </a>
+  <div class="text"><p style="color: green"><span>სადგური</span></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 5</div>
+  <a href="https://shotasblog.netlify.app/pictures/117769251_170446004615079_972964572032303529_n_170446001281746.jpg">
+  <img src="pictures/117769251_170446004615079_972964572032303529_n_170446001281746.jpg" style="width:100%">
+  </a>
+  <div class="text"><p style="color: green"><span>ბაზალეთი</span></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 5</div>
+  <a href="https://shotasblog.netlify.app/pictures/151028079_261448845514794_5244849940519211543_n_261448842181461.jpg">
+  <img src="pictures/151028079_261448845514794_5244849940519211543_n_261448842181461.jpg" style="width:100%">
+  </a>
+  <div class="text"><p style="color: green"><span>საბურთალო</span></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 
